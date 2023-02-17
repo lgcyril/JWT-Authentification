@@ -2,8 +2,9 @@
   "name": "authenti",
   "version": "1.0.0",
   "description": "Authentification Node.js",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "serve": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/lgcyril/authenti/issues"
   },
-  "homepage": "https://github.com/lgcyril/authenti#readme"
+  "homepage": "https://github.com/lgcyril/authenti#readme",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.0"
+  }
 }
