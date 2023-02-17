@@ -9,8 +9,8 @@ app.use(express.urlencoded({extended: true }));
 // console.log("Secret is " + process.env.ACCESS_TOKEN_SECRET)
 const user = { 
     id: 45,
-    name: "John Doe",
-    email: "jd@fbi.gov",
+    name: "Emma Da Best",
+    email: "EmmaDaBest@FBI.GOV",
     admin: true,
 }
 
@@ -25,7 +25,7 @@ app.post('/api/login', (req, res) => {
     if (req.body.email !== user.email) {
         res.status(401).send('Invalide credentials');
     }
-    if (req.body.password !== "toto") {
+    if (req.body.password !== "EmmaInZMoon") {
         res.status(401).send('Invalide credentials');
     }
     const accessToken = generateAccessToken(user);
