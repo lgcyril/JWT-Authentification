@@ -20,7 +20,10 @@ const user = {
 // Generate an access token
 function generateAccessToken(user) {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "1800s",
+    expiresIn: "1800s", // if the user is inactive for 30 minutes, he will have to log in again
+    // but if you delete the user, he will still be able to use the token during 30 minutes
+    // but if don't want the user to log in again every 30 mn, we can generate a refresh token and use it to generate a new access token
+    // but we will check in DB if the user is still in the DB and has the right to get a new token?
   });
 }
 
@@ -65,7 +68,7 @@ app.post("/api/refreshToken", (req, res) => {
     // TO DO : Check if the user is in the database and has the right to get a new token
     delete user.iat; // delete the iat (creation)  and exp (expiration) delay to be able to generate a new token
     delete user.exp;
-    const refreshedToken = generateRefreshToken(user);
+    const refreshedToken = generateAccessToken(user);
     res.send({
       accessToken: refreshedToken,
     }); // return the new token
