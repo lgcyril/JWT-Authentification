@@ -12,6 +12,6 @@ npm install dotenv
 # INSTALL EXPRESS
 npm install express
 
-# INSTALL AXIOS
+# INSTALL AXIOS TO TEST THE CLIENT
 npm install --save-dev axios
 
