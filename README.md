@@ -12,7 +12,7 @@ npm install dotenv
 # INSTALL EXPRESS
 npm install express
 
-# INSTALL AXIOS TO TEST THE CLIENT
+# INSTALL AXIOS TO TEST THE CLIENT --save-dev to tell him to not install in the backend as it just a local test
 npm install --save-dev axios
 
 # CREATE A PRIVATE TOKEN AAND REFRESH TOKEN IN .env FILE (CHANGE THE PASSWORD)
